@@ -23,5 +23,10 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.2.0",
     "vite": "^7.0.0"
-  }
+  },
+  "description": "[Ultimate Guide to Cloudinary Image/Video Uploads in MERN Stack](https://www.youtube.com/watch?v=UkqgaKJxfZ0)   Web Wizard   50m:43s",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
