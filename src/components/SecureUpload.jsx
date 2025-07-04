@@ -28,7 +28,7 @@ export default function SecureUpload(){
     }
     const getSignatureForUpload = async(folder)=>{
         try{
-            const res = await axios.post(`/api/sign-upload`,{folder})
+            const res = await axios.post(`http://localhost:5174/api/sign-upload`,{folder})
             return res.data
         }catch(err){
             console.log(err)

@@ -27,7 +27,7 @@ export default function Upload(){
             setLoading(true)
             const imgUrl = await uploadFile('image')
             const videoUrl = await uploadFile('video')
-            await axios.post(`/api/videos`,{imgUrl,videoUrl})
+            await axios.post(`http://localhost:5174/api/videos`,{imgUrl,videoUrl})
             setImg('')
             setVideo('')
             console.log('File Upload Success!')
