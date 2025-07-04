@@ -7,11 +7,13 @@ export default function SecureUpload(){
     const [loading,setLoading] = useState(false)
 
     const uploadFile= async(type,timestamp,signature)=>{
+        const folder = type === 'image' ? 'images' : 'videos'
         const data = new FormData()
         data.append('file',type=='image'?img:video)
         data.append('timestamp',timestamp)
         data.append('signature',signature)
         data.append('api_key','131427865653845')
+        data.append('folder',folder)
         try{
             let cloudName = 'dosst0owt'
             let resourceType = type == 'image' ? 'image' : 'video'
@@ -40,7 +42,7 @@ export default function SecureUpload(){
             const {timestamp:videoTimestamp,signature:videoSignature}=await getSignatureForUpload('videos')
             const imgUrl = await uploadFile('image',imgTimestamp,imgSignature)
             const videoUrl = await uploadFile('video',videoTimestamp,videoSignature)
-            // await axios.post(`/api/videos`,{imgUrl,videoUrl})
+            await axios.post(`/api/videos`,{imgUrl,videoUrl})
             setImg('')
             setVideo('')
             console.log('File Upload Success!')
@@ -51,7 +53,7 @@ export default function SecureUpload(){
     }
     return(
     <>
-        <h2>Upload</h2>
+        <h2>Secure Upload</h2>
         <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor='video'>Video:</label><br/>

@@ -2,3 +2,4 @@
 Web Wizard  
 50m:43s  
 
+/server$ node --watch --env-file=../.env server.js  
